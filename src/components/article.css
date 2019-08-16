@@ -1,0 +1,77 @@
+.date-b,
+.date-sm,
+.date-sm-a {
+  color: #DA4167;
+  font-size:  0.8em;
+  padding-bottom: 12px;
+}
+.date-b {
+  display: none;
+}
+
+.box {
+  position: absolute;
+  bottom: -100px;
+  right: 0;
+  left: 25%;
+  background: #fff;
+  padding: 40px;
+  z-index: 3;
+  border-top-left-radius: 8px;
+}
+article:last-child{
+  margin-bottom: 20px;
+}
+h3{
+  color: #000;
+  transform: scale(1) translateX(0);
+  transition: transform 0.4s;
+}
+.gc-home-b .date-sm {
+  position: absolute;
+  bottom: 0;
+  background: #fff;
+  width: 50%;
+  padding: 16px 24px ;
+  border-top-right-radius: 8px;
+  left: -8px;
+  font-size: 0.7em;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+.grid-text {
+  padding: 0 24px 12px;
+  border-bottom: 1px solid pink;
+  margin-bottom: 2rem;
+}
+.grid-text:hover h3,
+.grid-item:hover h3,
+.intro:hover h3 {
+  transform: scale(1.04) translateX(10px);
+}
+.intro {
+  margin-bottom: 7rem;
+  position: relative;
+}
+article {
+  padding-right: 2rem;
+}
+
+@media (min-width: 768px ) {
+  .grid-text {
+    padding: 20px;
+  }
+  .date-sm {
+    display: none;
+  }
+  .date-b {
+    display: block;
+  }
+  .gc-home-b .date-sm {
+    display: none;
+  }
+  .grid-text {
+    border-bottom: 0;
+  }
+}

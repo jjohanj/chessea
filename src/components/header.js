@@ -1,42 +1,29 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+/**
+ * SEO component that queries for data with
+ *  Gatsby's useStaticQuery React hook
+ *
+ * See: https://www.gatsbyjs.org/docs/use-static-query/
+ */
+
 import React from "react"
+import './header.css'
+import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+function Header(props) {
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+  return (
+    <header className="container">
+        <nav>
+        <div className="logo"><h1>Chessea</h1></div>
+          <ul>
+            <li><Link activeStyle={{ color: "#087F8C" }} to="/">Home</Link></li>
+            <li><Link activeStyle={{ color: "#087F8C" }} state={{ data: props.data }}to="/page-3">Artikelen</Link></li>
+            <li><Link activeStyle={{ color: "#087F8C" }} to="/page-4">Partijen</Link></li>
+          </ul>
+        </nav>
+    </header>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

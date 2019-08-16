@@ -1,0 +1,47 @@
+.date {
+  background: #087F8C;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  margin-right: 8px;
+  transition: transform 0.2s;
+  transform: scale(1);
+  color: #fff;
+}
+.date span {
+  padding-left: 2px;
+}
+
+.event {
+  transform: translate(0, 0);
+  transition: transform 0.3s;
+}
+
+a {
+  color: #0f0f0f;
+  text-decoration: none;
+}
+a:hover .date {
+  transform: scale(1.07);
+}
+a:hover .event {
+  transform: translate(6px, 0)
+}
+.calender h2 {
+  display: inline-block;
+  margin:  0 auto;
+}
+
+.calender a{
+  width: 350px;
+  margin: auto;
+}
+@media (min-width: 1100px) {
+  .calender a,
+  .calender h2 {
+    margin: 0;
+  }
+}

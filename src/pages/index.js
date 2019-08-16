@@ -1,21 +1,37 @@
-import React from "react"
-import { Link } from "gatsby"
-
+import React, { useState, useEffect } from "react"
+import { Link, Router } from "gatsby"
+import "../components/layout.css"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Grid from "../components/grid"
+import Nav from "../components/Nav"
+import axios from "axios"
+import { navigate } from 'gatsby';
 
-const IndexPage = () => (
-  <Layout>
+function IndexPage () {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        'https://www.chessea.nl/data.php',
+      );
+
+      setData(result.data);
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <>
+    <Nav />
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
-
+    <Grid calendar={data.calender} articles={data.article}/>
+  </>
+  )
+}
 export default IndexPage
+// <Header data={data.article} matches={data.matches} />
